@@ -1,35 +1,27 @@
 import React, { useState } from 'react'
 import Input from './Input';
 import { useFormik } from 'formik';
+import {regiesterValidationScheme} from '../Validate'
 
 export default function Register() {
 
+  const initialValues = {
+    username: '',
+    email: '',
+    password: '',
+  };
+
+  const onSubmit = () => {
+    console.log(values);
+  }
+
   const formik = useFormik(
     {
-      initialValues: {
-        username: '',
-        email: '',
-        password: '',
-      },
-      onSubmit: values => { 
-        console.log(values) 
-      },
-      validate: values => {
-        const errors = {}
-        if (!values.username) {
-          errors.username = 'User Name is Required'
-        }
-        if (!values.email) {
-          errors.email = 'Email is Required'
-        }
-        if (!values.password) {
-          errors.password = 'Password is Required'
-        }
-        return errors
-      }
+      initialValues,
+      onSubmit,
+      validationSchema: regiesterValidationScheme
     }
   )
-
 
   const inputs = [
     {
@@ -41,7 +33,7 @@ export default function Register() {
     {
       id: 'email',
       title: 'Email',
-      type: 'email',
+      type: 'text',
       value: formik.values.email,
     },
     {
@@ -60,7 +52,10 @@ export default function Register() {
       type={input.type}
       value={input.value} 
       errors={formik.errors}
-      onChange={formik.handleChange} />
+      onChange={formik.handleChange} 
+      onBlur={formik.handleBlur}
+      touched={formik.touched}
+    />
   )
 
   return (
