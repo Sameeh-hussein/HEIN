@@ -13,6 +13,15 @@ export const regiesterValidationScheme = yup.object({
         .min(12, "Minimum 12 characters")
         .max(30, "Maximum 30 characters"),
     image: yup.string()
-              .required('Image is Required'),
+        .required('Image is Required'),
 });
 
+export const loginValidationScheme = yup.object({
+    email: yup.string()
+        .required('Email is Required')
+        .email(),
+    password: yup.string()
+        .required('Password is Required')
+        .min(12, "Minimum 12 characters")
+        .max(30, "Maximum 30 characters")
+});

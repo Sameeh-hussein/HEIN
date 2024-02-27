@@ -7,6 +7,7 @@ import AdminLayout from './admin/AdminLayout'
 import AdminHome from './admin/Home'
 import AdminCategories from './admin/Categories'
 import Register from './user/Register'
+import Login from './user/Login'
 
 export const Router = createBrowserRouter ([
     {
@@ -24,6 +25,10 @@ export const Router = createBrowserRouter ([
             {
                 path: 'register',
                 element: <Register />
+            },
+            {
+                path: 'login',
+                element: <Login />
             },
             {
                 path: '*',

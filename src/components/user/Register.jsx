@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import Input from './Input';
 import { useFormik } from 'formik';
 import {regiesterValidationScheme} from '../Validate'
+import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
+
+  const navigate = useNavigate();
 
   const initialValues = {
     username: '',
@@ -22,7 +25,8 @@ export default function Register() {
     //now send User Data to backend
     //axios.post('endpoint', userData);
 
-    formik.resetForm();
+    //if response was success
+    navigate('/login');
   }
 
   const formik = useFormik(
