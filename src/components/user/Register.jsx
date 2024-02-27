@@ -9,10 +9,20 @@ export default function Register() {
     username: '',
     email: '',
     password: '',
+    image: ''
   };
 
-  const onSubmit = () => {
-    console.log(values);
+  const onSubmit = (data) => {
+    const userData = new FormData();
+    userData.append('username', data.username);
+    userData.append('email', data.email);
+    userData.append('password', data.password);
+    userData.append('image', data.image);
+
+    //now send User Data to backend
+    //axios.post('endpoint', userData);
+
+    formik.resetForm();
   }
 
   const formik = useFormik(
@@ -22,6 +32,10 @@ export default function Register() {
       validationSchema: regiesterValidationScheme
     }
   )
+
+  const handelFieldChange = (event) => {
+    formik.setFieldValue('image',  event.target.files[0]);
+  }
 
   const inputs = [
     {
@@ -41,6 +55,12 @@ export default function Register() {
       title: 'Password',
       type: 'password',
       value: formik.values.password,
+    },
+    {
+      id: 'image',
+      title: 'Image',
+      type: 'file',
+      onchange: handelFieldChange,
     }
   ];
 
@@ -52,7 +72,7 @@ export default function Register() {
       type={input.type}
       value={input.value} 
       errors={formik.errors}
-      onChange={formik.handleChange} 
+      onChange={input.onchange || formik.handleChange}
       onBlur={formik.handleBlur}
       touched={formik.touched}
     />
@@ -65,11 +85,11 @@ export default function Register() {
           <div className="card">
             <div className="card-header d-flex justify-content-center" style={{ fontSize: '1.2rem' }} >Register</div>
             <div className="card-body">
-              <form onSubmit={formik.handleSubmit}>
+              <form onSubmit={formik.handleSubmit} encType='multipart/form-data'>
 
                 {renderInputs}
 
-                <button type="submit" className="btn btn-dark">Register</button>
+                <button type="submit" disabled={!formik.isValid} className="btn btn-dark">Register</button>
               </form>
             </div>
           </div>

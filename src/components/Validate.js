@@ -12,5 +12,7 @@ export const regiesterValidationScheme = yup.object({
         .required('Password is Required')
         .min(12, "Minimum 12 characters")
         .max(30, "Maximum 30 characters"),
+    image: yup.string()
+              .required('Image is Required'),
 });
 
