@@ -9,6 +9,7 @@ import AdminCategories from './admin/Categories'
 import Register from './user/Register'
 import Login from './user/Login'
 import CategoryDetails from './user/CategoryDetails'
+import ProductView from './user/ProductView'
 
 export const Router = createBrowserRouter ([
     {
@@ -24,8 +25,12 @@ export const Router = createBrowserRouter ([
                 element: <Categories />
             },
             {
-                path: 'categories/products/:categoryId',
+                path: 'categories/:categoryId/products',
                 element: <CategoryDetails />
+            },
+            {
+                path: 'categories/:categoryId/products/:productId',
+                element: <ProductView />
             },
             {
                 path: 'register',
