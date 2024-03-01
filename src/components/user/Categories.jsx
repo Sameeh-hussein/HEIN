@@ -24,7 +24,7 @@ export default function Categories() {
   }
 
   const renderCategories = data.map((category, index) => (
-    <Category idx={index} name={category.name} image={category.image} />
+    <Category idx={index} name={category.name} image={category.image} id={category.id} />
   ))
   
   return (

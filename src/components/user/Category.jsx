@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export default function Category(props) {
-    const {idx, image, name} = props;
+    const {idx, image, name, id} = props;
     return (
-        <div key={idx} className="col-lg-2 col-md-4 col-sm-6 text-center">
+        <Link to={`/categories/products/${id}`} key={idx} className="col-lg-2 col-md-4 col-sm-6 text-center" style={{ textDecoration: 'none', color: 'inherit' }}>
             <img
                 src={image}
                 alt={name}
@@ -11,6 +12,6 @@ export default function Category(props) {
                 style={{ width: '110px', height: '110px' }}
             />
             <p>{name}</p>
-        </div>
+        </Link>
     )
 }

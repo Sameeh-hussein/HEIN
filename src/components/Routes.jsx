@@ -8,6 +8,7 @@ import AdminHome from './admin/Home'
 import AdminCategories from './admin/Categories'
 import Register from './user/Register'
 import Login from './user/Login'
+import CategoryDetails from './user/CategoryDetails'
 
 export const Router = createBrowserRouter ([
     {
@@ -21,6 +22,10 @@ export const Router = createBrowserRouter ([
             {
                 path: 'categories',
                 element: <Categories />
+            },
+            {
+                path: 'categories/products/:categoryId',
+                element: <CategoryDetails />
             },
             {
                 path: 'register',
