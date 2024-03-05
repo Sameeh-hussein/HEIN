@@ -1,7 +1,9 @@
 # HEIN E-commerce Website
 
-## Here We Goo ! 🚨🚨
+# Here Wee Gooo ! 🚨🚨
 ### Thrilled to complete my first React project!
+
+<br>
 
 ## Technologies Used
 
@@ -9,6 +11,8 @@
 - **API Integration**: Axios, React Query
 - **Routing**: React Router
 - **UI Components**: Bootstrap, Swiper
+
+<br>
 
 ## Getting Started
 
@@ -19,3 +23,8 @@ To run the HEIN project locally, follow these steps:
 3. Install dependencies: `npm install`
 4. Start the development server: `npm start`
 5. Open your web browser and visit `http://localhost:{port#}` to access the HEIN website.
+
+<br>
+
+## Alternatively, you can access the project by clicking on this link:
+   [HEIN Project](https://hein.onrender.com/)
