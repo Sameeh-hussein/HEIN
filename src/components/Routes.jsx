@@ -10,6 +10,7 @@ import Register from './user/Register'
 import Login from './user/Login'
 import CategoryDetails from './user/CategoryDetails'
 import ProductView from './user/ProductView'
+import AllProductView from './user/AllProductView'
 
 export const Router = createBrowserRouter ([
     {
@@ -27,6 +28,10 @@ export const Router = createBrowserRouter ([
             {
                 path: 'categories',
                 element: <Categories />
+            },
+            {
+                path: 'products',
+                element: <AllProductView />
             },
             {
                 path: 'categories/:categoryId/products',

@@ -1,19 +1,16 @@
 import axios from 'axios';
 import React from 'react'
 import { useQuery } from 'react-query';
-import { useParams } from 'react-router-dom'
 import ProductCard from './ProductCard';
 
-export default function CategoryDetails() {
-    const { categoryId } = useParams();
+export default function AllProductView() {
 
-    const getCategoryDetails = async () => {
+    const getAllProductsDetails = async () => {
         let { data } = await axios.get(`https://api.escuelajs.co/api/v1/products`);
-        data = data.filter(x => x.category.id == categoryId);
         return data;
     }
 
-    const { data, isLoading } = useQuery('category_details_cash', getCategoryDetails);
+    const { data, isLoading } = useQuery('all_product_cash', getAllProductsDetails);
 
     if (isLoading) {
         return (

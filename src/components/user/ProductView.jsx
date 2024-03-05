@@ -50,7 +50,7 @@ export default function ProductView() {
                                                     key={index}
                                                     className={`carousel-item ${index === activeIndex ? 'active' : ''}`}
                                                 >
-                                                    <img src={image} className="d-block w-100" alt={`Image ${index + 1}`} />
+                                                    <img src={image.replace(/\[|\]|"/g, '')} className="d-block w-100" alt={`Image ${index + 1}`} />
                                                 </div>
                                             ))}
                                         </div>
