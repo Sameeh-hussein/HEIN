@@ -1,8 +1,21 @@
-# React + Vite
+# HEIN E-commerce Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Here We Goo ! 🚨🚨
+### Thrilled to complete my first React project!
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend**: React.js, Bootstrap
+- **API Integration**: Axios, React Query
+- **Routing**: React Router
+- **UI Components**: Bootstrap, Swiper
+
+## Getting Started
+
+To run the HEIN project locally, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/your-username/hein.git`
+2. Navigate to the project directory: `cd hein`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm start`
+5. Open your web browser and visit `http://localhost:{port#}` to access the HEIN website.
