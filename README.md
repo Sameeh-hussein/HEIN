@@ -21,7 +21,7 @@ To run the HEIN project locally, follow these steps:
 1. Clone the repository: `git clone https://github.com/Sameeh-hussein/HEIN.git`
 2. Navigate to the project directory: `cd hein`
 3. Install dependencies: `npm install`
-4. Start the development server: `npm start`
+4. Start the development server: `npm run dev`
 5. Open your web browser and visit `http://localhost:{port#}` to access the HEIN website.
 
 <br>
